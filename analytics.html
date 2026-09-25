@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Brintha – Data Analytics & BI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --text: #f0f0f0;
+      --muted: #b0b0b0;
+      --accent: #3b82f6;
+      --card: #15171e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    header {
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 0 0 6px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 16px;
+    }
+    .intro {
+      font-size: 15px;
+      margin: 0 0 20px;
+      max-width: 720px;
+    }
+    .nav {
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+    .section-title {
+      font-size: 18px;
+      margin: 28px 0 10px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #222630;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .proj {
+      margin-top: 14px;
+    }
+    .proj h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .proj p {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .proj .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .proj .links {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .proj .links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Data Analyst – Python, SQL, Power BI, PySpark, AWS</h1>
+      <p class="subtitle">Brintha Thirunavukkarasu</p>
+      <p class="intro">
+        I build reliable data workflows, dashboards and analysis that help teams understand performance and make better decisions.
+        I have experience processing large datasets, carrying out data‑quality checks, automating reporting and developing Power BI dashboards.
+        I also bring software‑development experience, which helps me approach analytics projects with attention to testing, performance and maintainability.
+      </p>
+
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Healthcare & Research portfolio</a>
+        <a href="cv/Brintha_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </header>
+
+    <h2 class="section-title">Core skills</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Core</h3>
+        <ul>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Power BI</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Data & BI</h3>
+        <ul>
+          <li>DAX</li>
+          <li>Power Query</li>
+          <li>ETL</li>
+          <li>Data modelling</li>
+          <li>Data quality</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Big data & cloud</h3>
+        <ul>
+          <li>PySpark</li>
+          <li>AWS S3</li>
+          <li>AWS EC2</li>
+          <li>Large‑scale data processing</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Databases & tools</h3>
+        <ul>
+          <li>PostgreSQL</li>
+          <li>MySQL</li>
+          <li>Git / GitHub</li>
+          <li>Agile / Scrum</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>AI/ML (applied)</h3>
+        <ul>
+          <li>scikit‑learn</li>
+          <li>Regression & classification</li>
+          <li>Clustering (RFM, k‑means)</li>
+          <li>Basic deep learning concepts</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Featured projects</h2>
+
+    <div class="proj">
+      <h3>UK E‑commerce Customer Segmentation</h3>
+      <p>
+        Analysed around 1 million UK e‑commerce transactions to group customers by behaviour and value using RFM analysis and clustering.
+      </p>
+      <p>
+        Identified distinct customer segments (e.g. high‑value, loyal, lower‑engagement) and translated the results into potential retention and marketing actions.
+      </p>
+      <div class="meta">
+        Tools: Python, pandas, scikit‑learn, SQL, data visualisation
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>AI Power BI Dashboard</h3>
+      <p>
+        Built an interactive Power BI dashboard combining data transformation, KPI analysis and AI‑oriented insights for business stakeholders.
+      </p>
+      <p>
+        Focused on clear visual storytelling, reusable data models and DAX measures that support ongoing reporting.
+      </p>
+      <div class="meta">
+        Tools: Power BI, DAX, Power Query, Python
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>Global Health Data Analysis</h3>
+      <p>
+        Explored relationships between health indicators and infant mortality across 130+ countries using statistical modelling and regression.
+      </p>
+      <p>
+        Produced visualisations and interpretations that highlight key drivers and data limitations.
+      </p>
+      <div class="meta">
+        Tools: Python, pandas, statistics, regression, data visualisation
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>AI Company Impact Dashboard</h3>
+      <p>
+        Created a Power BI dashboard exploring the AI ecosystem across 11 companies and 3,000+ foundation models.
+      </p>
+      <p>
+        Enabled comparative analytics on companies, models and market information with interactive filters and summaries.
+      </p>
+      <div class="meta">
+        Tools: Power BI, Power Query, DAX, data analysis
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>Big‑data Processing & Reporting Automation</h3>
+      <p>
+        Worked with 5M+ records per day using Python, PySpark and SQL on AWS, performing profiling, cleaning, validation and reconciliation.
+      </p>
+      <p>
+        Automated reporting processes in Power BI and Excel, reducing manual effort by approximately 70% and improving consistency.
+      </p>
+      <div class="meta">
+        Tools: Python, PySpark, SQL, AWS S3/EC2, Power BI, Excel
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Experience (analyst view)</h2>
+    <div class="card">
+      <h3>Big Data Analyst Intern – Tech Guild UK</h3>
+      <p>
+        Processed and analysed 5M+ records daily using Python, PySpark and SQL. Performed data profiling, cleaning, validation, reconciliation and deduplication.
+        Built Power BI reports and automated workflows, reducing manual effort by around 70%. Collaborated with technical and non‑technical stakeholders to present findings.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Software Developer L2 – Securden Technologies</h3>
+      <p>
+        Worked on enterprise security software using Python, Django, SQL and PostgreSQL. Improved query performance by ~30%, reduced recurring defects by ~20%,
+        and supported UAT, testing and data migration in an Agile environment.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Research Analyst Intern – SimBioen Labs</h3>
+      <p>
+        Performed statistical analysis on experimental data using Excel and GraphPad Prism (ANOVA, t‑tests, hypothesis testing) and contributed to scientific reporting.
+      </p>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h3>Additional background</h3>
+      <p>
+        I also hold postgraduate degrees in biotechnology and have worked on biomedical research projects. This gives me strong discipline around data quality,
+        documentation and careful interpretation.
+      </p>
+    </div>
+
+    <div style="margin-top:24px; font-size:14px; color:var(--muted);">
+      Open to Data Analyst, BI Analyst, Analytics Engineer and related roles in the UK.
+    </div>
+
+    <a class="back-link" href="index.html">← Back to home</a>
+
+    <footer>
+      LinkedIn: <a href="https://linkedin.com/in/brinthat" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">brinthat</a> ·
+      GitHub: <a href="https://github.com/Brinthat" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Brinthat</a>
+    </footer>
+  </div>
+</body>
+</html>
