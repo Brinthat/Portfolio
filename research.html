@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Brintha – Healthcare & Research Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --text: #f0f0f0;
+      --muted: #b0b0b0;
+      --accent: #3b82f6;
+      --card: #15171e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    header {
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 0 0 6px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 16px;
+    }
+    .intro {
+      font-size: 15px;
+      margin: 0 0 20px;
+      max-width: 720px;
+    }
+    .nav {
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+    .section-title {
+      font-size: 18px;
+      margin: 28px 0 10px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #222630;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .proj {
+      margin-top: 14px;
+    }
+    .proj h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .proj p {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .proj .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .proj .links {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .proj .links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Healthcare & Life Sciences Data Professional</h1>
+      <p class="subtitle">AI for Medical Imaging & Biomedical Research – Brintha Thirunavukkarasu</p>
+      <p class="intro">
+        My background began in biotechnology and biomedical research, where I developed experience in experimental design, laboratory data interpretation and statistical analysis.
+        I later moved into software development, AI and data science to work with larger datasets and computational methods.
+        My current interest is the responsible application of data and AI to healthcare, medical imaging, clinical research and life‑sciences problems.
+      </p>
+
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="analytics.html">Data Analytics & BI portfolio</a>
+        <a href="cv/Brintha_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </header>
+
+    <h2 class="section-title">Core skills</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Domain</h3>
+        <ul>
+          <li>Biotechnology</li>
+          <li>Biomedical research</li>
+          <li>Healthcare analytics</li>
+          <li>Medical imaging</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Methods</h3>
+        <ul>
+          <li>Experimental design</li>
+          <li>Hypothesis testing</li>
+          <li>ANOVA, t‑tests</li>
+          <li>Statistical interpretation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Programming & data</h3>
+        <ul>
+          <li>Python, pandas</li>
+          <li>SQL</li>
+          <li>Data cleaning</li>
+          <li>Visualisation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>AI/ML</h3>
+        <ul>
+          <li>CNNs, Transformers</li>
+          <li>Computer vision</li>
+          <li>Explainable AI (Grad‑CAM, attention)</li>
+          <li>PyTorch, TensorFlow, scikit‑learn</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git / GitHub</li>
+          <li>Power BI (health data viz)</li>
+          <li>Excel, GraphPad Prism</li>
+          <li>Agile / documentation</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Featured projects</h2>
+
+    <div class="proj">
+      <h3>Breast Ultrasound AI Report Generation</h3>
+      <p>
+        Developed a deep‑learning system that combines CNN image features (ResNet101) with a Transformer encoder‑decoder to generate radiology‑style reports from breast ultrasound images.
+      </p>
+      <p>
+        Used Grad‑CAM and attention visualisation to support explainability. Evaluated generated text with BLEU, CIDEr, METEOR and ROUGE metrics.
+      </p>
+      <p>
+        Dataset: 256 breast ultrasound scans (benign, malignant, normal) with associated radiology information and reports.
+      </p>
+      <p>
+        This is a research prototype demonstrating feasibility, not a clinical diagnostic tool.
+      </p>
+      <div class="meta">
+        Tools: Python, PyTorch, CNNs, Transformers, computer vision, explainable AI
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>Global Health Data Analysis</h3>
+      <p>
+        Analysed health indicators and infant mortality across 130+ countries to explore relationships between socioeconomic, healthcare and demographic factors.
+      </p>
+      <p>
+        Applied regression and statistical modelling, produced visualisations and discussed limitations and potential confounders.
+      </p>
+      <div class="meta">
+        Tools: Python, pandas, statistics, regression, data visualisation
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>Biomedical Research: Endothelial Insulin Resistance</h3>
+      <p>
+        Contributed to research on endothelial insulin resistance, involving laboratory techniques such as Western blot, qPCR and fluorescence microscopy.
+      </p>
+      <p>
+        Performed statistical analysis on experimental data and supported scientific reporting and interpretation.
+      </p>
+      <div class="meta">
+        Tools: Experimental methods, statistical analysis, Excel, GraphPad Prism
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <h3>AI Ticket Triage Tool (Responsible AI Workflow)</h3>
+      <p>
+        Designed a concept for an AI‑assisted ticket triage workflow that summarises, classifies and scores support tickets to reduce repetitive manual review.
+      </p>
+      <p>
+        Focused on human‑in‑the‑loop design, clear outputs and auditability rather than full automation.
+      </p>
+      <div class="meta">
+        Tools: Python, SQL, Claude API, AWS
+      </div>
+      <div class="links">
+        <a href="https://github.com/Brinthat" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Education</h2>
+    <div class="card">
+      <h3>MSc Artificial Intelligence & Data Science (with Industrial Placement)</h3>
+      <p>
+        University of East London – Distinction (86%).
+        Focus areas: machine learning on big data, deep learning, computer vision, NLP, explainable AI, data science.
+      </p>
+      <p>
+        Dissertation: “Leveraging Integrated CNN‑Transformer Model and XAI Technique for Enhanced Breast Ultrasound Report Generation”.
+      </p>
+    </div>
+    <div class="card">
+      <h3>MTech Biotechnology</h3>
+      <p>
+        Distinction. Focus on molecular biology, biomedical research, experimental design, statistical analysis and laboratory data interpretation.
+      </p>
+    </div>
+    <div class="card">
+      <h3>BTech Biotechnology</h3>
+      <p>
+        Foundation in biotechnology, molecular biology, biochemistry, microbiology, cell biology and research methods.
+      </p>
+    </div>
+
+    <h2 class="section-title">Research & scientific experience</h2>
+    <div class="card">
+      <h3>Research Analyst Intern – SimBioen Labs</h3>
+      <p>
+        Performed statistical analysis on experimental data (ANOVA, t‑tests, hypothesis testing) using Excel and GraphPad Prism and contributed to scientific reporting.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Biomedical & microbiology research</h3>
+      <p>
+        Worked on endothelial insulin resistance and biofilm‑related research, using techniques such as Western blot, qPCR and fluorescence microscopy, with emphasis on careful data interpretation.
+      </p>
+    </div>
+
+    <div style="margin-top:24px; font-size:14px; color:var(--muted);">
+      Open to healthcare data analyst, clinical data analyst, life‑sciences data, medical imaging AI and applied AI roles in the UK.
+    </div>
+
+    <a class="back-link" href="index.html">← Back to home</a>
+
+    <footer>
+      LinkedIn: <a href="https://linkedin.com/in/brinthat" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">brinthat</a> ·
+      GitHub: <a href="https://github.com/Brinthat" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Brinthat</a>
+    </footer>
+  </div>
+</body>
+</html>
