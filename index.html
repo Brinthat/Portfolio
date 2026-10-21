@@ -2,352 +2,899 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Brintha Thirunavukkarasu's portfolio in data analytics, business intelligence, Python, SQL and applied machine learning.">
-  <title>Brintha Thirunavukkarasu | Data Analytics & BI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brintha Thirunavukkarasu — Data Analytics, Business Intelligence and Applied AI portfolio.">
+  <title>Brintha Thirunavukkarasu | Data & AI Portfolio</title>
+
   <style>
     :root {
-      --bg: #0b0c10;
-      --surface: #15171e;
-      --surface-2: #10131a;
-      --text: #f0f0f0;
-      --muted: #b0b7c4;
-      --accent: #60a5fa;
-      --border: #292e3a;
-      --max-width: 1040px;
+      --bg: #0b1020;
+      --surface: #121a2e;
+      --surface-light: #17223a;
+      --text: #eef2ff;
+      --muted: #a6b2cc;
+      --accent: #7c9cff;
+      --accent-2: #55e0c0;
+      --border: rgba(255,255,255,.10);
+      --radius: 18px;
+      --max-width: 1160px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(124,156,255,.12), transparent 32rem),
+        radial-gradient(circle at 95% 15%, rgba(85,224,192,.08), transparent 28rem),
+        var(--bg);
       color: var(--text);
       line-height: 1.65;
     }
-    a { color: var(--accent); }
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 4px;
+      border-radius: 5px;
+    }
+
     .container {
-      width: min(var(--max-width), 100%);
-      margin: 0 auto;
-      padding: 24px 20px 56px;
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
     }
-    .top-nav {
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,16,32,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
       flex-wrap: wrap;
-      padding-bottom: 22px;
-      border-bottom: 1px solid var(--border);
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: .9rem;
     }
-    .brand { color: var(--text); font-weight: 750; text-decoration: none; }
-    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
-    .nav-links a { font-size: 14px; text-decoration: none; }
-    .hero { padding: 54px 0 36px; }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 92px 0 76px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, .7fr);
+      gap: 54px;
+      align-items: center;
+    }
+
     .eyebrow {
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 750;
-      letter-spacing: .1em;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent-2);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .11em;
       text-transform: uppercase;
+      margin-bottom: 18px;
     }
-    h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.12; margin: 12px 0; letter-spacing: -.035em; }
-    .subtitle { color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); margin: 0 0 20px; }
-    .intro { max-width: 760px; color: #d8dce5; font-size: 1.02rem; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .btn {
-      display: inline-block; border: 1px solid var(--accent); border-radius: 8px;
-      padding: 10px 15px; font-weight: 700; font-size: 14px; text-decoration: none;
-      background: var(--accent); color: #08111f;
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--accent-2);
     }
-    .btn.secondary { background: transparent; color: var(--text); border-color: var(--border); }
-    section { margin-top: 38px; scroll-margin-top: 20px; }
-    .section-heading { margin-bottom: 14px; }
-    h2 { font-size: 1.35rem; margin: 0 0 5px; }
-    .section-note { color: var(--muted); font-size: 14px; margin: 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 14px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-      padding: 18px; min-width: 0;
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1.07;
+      letter-spacing: -.065em;
+      margin-bottom: 22px;
     }
-    .card h3 { font-size: 1rem; margin: 0 0 9px; }
-    .card p { margin: 0; color: var(--muted); font-size: 14px; }
-    .card ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+    .gradient-text {
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #0b1020;
+      border-color: transparent;
+    }
+
+    .button-primary:hover {
+      background: #9bb3ff;
+    }
+
+    .hero-card {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(23,34,58,.95), rgba(18,26,46,.9));
+      box-shadow: 0 24px 70px rgba(0,0,0,.22);
+    }
+
+    .hero-card h2 {
+      font-size: 1.08rem;
+      margin-bottom: 18px;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .focus-list li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .focus-icon {
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.45rem);
+      line-height: 1.2;
+      letter-spacing: -.045em;
+      margin-bottom: 9px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .skills-experience-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: 25px;
+      align-items: start;
+    }
+
+    .panel {
+      min-width: 0;
+      padding: 25px;
+      background: rgba(18,26,46,.78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .panel-heading {
+      font-size: 1.3rem;
+      margin-bottom: 7px;
+      letter-spacing: -.025em;
+    }
+
+    .panel-description {
+      color: var(--muted);
+      font-size: .91rem;
+      margin-bottom: 22px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .skill-card {
+      padding: 17px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .skill-card h3 {
+      font-size: .97rem;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.65;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 23px;
+    }
+
+    .experience-item {
+      position: relative;
+      padding-left: 19px;
+      border-left: 2px solid rgba(124,156,255,.45);
+    }
+
+    .experience-item::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      background: var(--accent-2);
+      border-radius: 50%;
+    }
+
+    .experience-item h3 {
+      font-size: 1rem;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .experience-meta {
+      color: var(--accent-2);
+      font-size: .82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .experience-item ul {
+      padding-left: 17px;
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .experience-item li + li {
+      margin-top: 6px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 25px;
+      background: linear-gradient(145deg, rgba(23,34,58,.88), rgba(18,26,46,.9));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,156,255,.55);
+    }
+
+    .project-number {
+      color: var(--accent-2);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      font-size: 1.22rem;
+      line-height: 1.35;
+      letter-spacing: -.025em;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 17px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+
     .tag {
-      border: 1px solid var(--border); border-radius: 999px; padding: 4px 9px;
-      color: #dbeafe; background: var(--surface-2); font-size: 12px;
+      padding: 5px 9px;
+      color: #d6e0ff;
+      background: rgba(124,156,255,.10);
+      border: 1px solid rgba(124,156,255,.2);
+      border-radius: 7px;
+      font-size: .76rem;
     }
-    .project { display: flex; flex-direction: column; gap: 9px; }
-    .project .project-meta { color: var(--accent); font-size: 12px; font-weight: 700; }
-    .project .project-links { margin-top: auto; padding-top: 5px; font-size: 14px; }
-    .project .project-links a { text-decoration: none; }
-    .experience-item { margin-bottom: 14px; }
-    .experience-title { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .experience-title h3 { margin-bottom: 3px; }
-    .date { color: var(--muted); font-size: 13px; }
-    .callout { border-left: 3px solid var(--accent); padding: 12px 16px; background: var(--surface-2); border-radius: 0 8px 8px 0; color: var(--muted); font-size: 14px; }
-    footer { border-top: 1px solid var(--border); margin-top: 44px; padding-top: 20px; color: var(--muted); font-size: 13px; }
-    footer a { text-decoration: none; }
-    @media (max-width: 560px) {
-      .container { padding: 18px 15px 40px; }
-      .hero { padding-top: 38px; }
-      .nav-links { gap: 11px; }
-      .btn { width: 100%; text-align: center; }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      color: var(--accent-2);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .education-card {
+      padding: 23px;
+      background: rgba(18,26,46,.78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .education-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 7px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .education-result {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent-2);
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    .contact-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 34px;
+      background: linear-gradient(125deg, rgba(124,156,255,.12), rgba(85,224,192,.07));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      letter-spacing: -.04em;
+      margin-bottom: 10px;
+    }
+
+    .contact-panel p {
+      max-width: 640px;
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding: 30px 0;
+      margin-top: 55px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-card {
+        max-width: 650px;
+      }
+
+      .skills-experience-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .nav-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: .84rem;
+      }
+
+      .hero {
+        padding: 60px 0 38px;
+      }
+
+      section {
+        padding: 38px 0;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
+      .project-card {
+        padding: 20px;
+      }
+
+      .contact-panel {
+        padding: 23px;
+      }
+
+      .contact-actions,
+      .contact-actions .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <nav class="top-nav" aria-label="Main navigation">
-      <a class="brand" href="#home">Brintha Thirunavukkarasu</a>
-      <div class="nav-links">
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
 
-    <header class="hero" id="home">
-      <div class="eyebrow">Data Analytics · Business Intelligence · Applied AI</div>
-      <h1>Turning data into clear, useful insights.</h1>
-      <p class="subtitle">MSc Artificial Intelligence &amp; Data Science Graduate | London, UK</p>
-      <p class="intro">
-        I combine Python, SQL, data visualisation and machine learning with a software-development background.
-        I enjoy preparing and exploring datasets, identifying patterns, communicating findings clearly and building
-        analytical solutions that support better decisions. My interests include data analysis, BI reporting,
-        customer analytics and applied AI.
-      </p>
-      <div class="actions">
-        <a class="btn" href="#projects">Explore projects</a>
-        <a class="btn secondary" href="cv/Brintha_CV.pdf" target="_blank" rel="noopener noreferrer">View CV (PDF)</a>
-        <a class="btn secondary" href="https://github.com/Brinthat" target="_blank" rel="noopener noreferrer">GitHub</a>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Brintha<span>.</span></a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Data Analytics · BI · Applied AI</div>
+
+          <h1>
+            Turning data into
+            <span class="gradient-text">meaningful insights.</span>
+          </h1>
+
+          <p class="hero-description">
+            I'm Brintha Thirunavukkarasu, an AI and Data Science postgraduate
+            with experience in software development and an interest in data
+            analytics, business intelligence, machine learning and applied AI.
+            I enjoy exploring datasets, building analytical solutions and
+            communicating findings through clear visualisations.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore Projects ↗</a>
+            <a class="button" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2>Areas of Focus</h2>
+          <ul class="focus-list">
+            <li>
+              <span class="focus-icon">✦</span>
+              <span>Data analysis, data preparation and exploratory analysis</span>
+            </li>
+            <li>
+              <span class="focus-icon">✦</span>
+              <span>Business intelligence, reporting and dashboard development</span>
+            </li>
+            <li>
+              <span class="focus-icon">✦</span>
+              <span>Machine learning and deep learning projects</span>
+            </li>
+            <li>
+              <span class="focus-icon">✦</span>
+              <span>Software development, problem-solving and collaboration</span>
+            </li>
+          </ul>
+        </aside>
       </div>
-    </header>
+    </section>
 
     <section id="skills">
-      <div class="section-heading">
-        <h2>Technical skills</h2>
-        <p class="section-note">Core tools and areas relevant to data analyst, BI analyst and junior data science roles.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>Programming &amp; analysis</h3>
-          <ul>
-            <li>Python, Pandas and NumPy</li>
-            <li>Exploratory data analysis</li>
-            <li>Data cleaning and validation</li>
-            <li>Matplotlib and Seaborn</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>SQL &amp; databases</h3>
-          <ul>
-            <li>SQL querying and aggregations</li>
-            <li>MySQL and PostgreSQL</li>
-            <li>Relational data concepts</li>
-            <li>Data quality checks</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Business intelligence</h3>
-          <ul>
-            <li>Power BI and Tableau</li>
-            <li>Dashboard and KPI concepts</li>
-            <li>Power Query and DAX concepts</li>
-            <li>Data visualisation and reporting</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Data engineering foundations</h3>
-          <ul>
-            <li>ETL and data transformation concepts</li>
-            <li>Basic exposure to PySpark and Hadoop</li>
-            <li>Cloud analytics concepts, including AWS</li>
-            <li>Git, GitHub and Agile/Scrum</li>
-          </ul>
-        </article>
-       
-<article class="card">
-  <h3>Machine Learning</h3>
-  <ul>
-    <li>Supervised and unsupervised learning</li>
-    <li>Regression and classification</li>
-    <li>Clustering: K-means and RFM segmentation</li>
-    <li>Feature engineering and data preprocessing</li>
-    <li>Model evaluation and performance metrics</li>
-    <li>Scikit-learn, Pandas and NumPy</li>
-  </ul>
-</article>
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Capabilities</div>
+          <h2>Technical Skills & Experience</h2>
+          <p>
+            A combination of analytical, visualisation, AI and software
+            development skills, supported by academic projects and professional experience.
+          </p>
+        </div>
 
+        <div class="skills-experience-layout">
+          <div class="panel">
+            <h3 class="panel-heading">Technical Skills</h3>
+            <p class="panel-description">
+              Tools and technologies used across my projects and professional background.
+            </p>
 
-<article class="card">
-  <h3>Deep Learning</h3>
-  <ul>
-    <li>Artificial Neural Networks (ANNs)</li>
-    <li>Convolutional Neural Networks (CNNs)</li>
-    <li>Transformer architectures</li>
-    <li>Image classification and report generation</li>
-    <li>Explainable AI: Grad-CAM and attention maps</li>
-    <li>TensorFlow, Keras and PyTorch</li>
-  </ul>
-</article>
+            <div class="skills-grid">
+              <article class="skill-card">
+                <h3>Python & Data Analysis</h3>
+                <p>
+                  Python, Pandas, NumPy, Matplotlib, Seaborn,
+                  exploratory data analysis and data cleaning.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>SQL & Databases</h3>
+                <p>
+                  SQL queries, data filtering, joins, aggregation,
+                  MySQL and PostgreSQL.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Business Intelligence</h3>
+                <p>
+                  Power BI, Tableau, data visualisation, dashboard concepts,
+                  Power Query and DAX concepts.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Data Preparation</h3>
+                <p>
+                  Data profiling, cleaning, transformation, validation,
+                  feature preparation and ETL concepts.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Machine Learning</h3>
+                <p>
+                  Scikit-learn, regression, clustering, classification,
+                  feature engineering and model evaluation.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Deep Learning & XAI</h3>
+                <p>
+                  TensorFlow, Keras, PyTorch, ANN, CNN, Transformer models,
+                  Grad-CAM and attention heatmaps.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Big Data & Cloud</h3>
+                <p>
+                  Basic exposure to Hadoop, PySpark and AWS concepts;
+                  developing understanding of distributed data processing.
+                </p>
+              </article>
+
+              <article class="skill-card">
+                <h3>Development & Delivery</h3>
+                <p>
+                  Git, GitHub, Django, JavaScript, Docker basics,
+                  CI/CD concepts, Agile and Scrum.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel" id="experience">
+            <h3 class="panel-heading">Professional Experience</h3>
+            <p class="panel-description">
+              Experience spanning software development, data-related learning and research.
+            </p>
+
+            <div class="timeline">
+              <article class="experience-item">
+                <h3>Big Data Analyst Intern · Tech Guild</h3>
+                <div class="experience-meta">Oct 2024 – May 2025</div>
+                <ul>
+                  <li>Developed understanding of data profiling, cleaning, validation and preparation workflows.</li>
+                  <li>Built knowledge of Python, SQL, data transformation and business intelligence concepts.</li>
+                  <li>Gained introductory exposure to big data and cloud technologies, including Hadoop, Spark and AWS.</li>
+                </ul>
+              </article>
+
+              <article class="experience-item">
+                <h3>Software Engineer – Product Development · Securden Technologies</h3>
+                <div class="experience-meta">Aug 2022 – Aug 2023</div>
+                <ul>
+                  <li>Worked on cybersecurity product development using Python, Django and JavaScript.</li>
+                  <li>Worked with relational databases, including MySQL and PostgreSQL, for application-related tasks.</li>
+                  <li>Used Git for version control and collaborated with team members within an Agile/Scrum development environment.</li>
+                  <li>Contributed to debugging, maintenance and improving application reliability and code maintainability.</li>
+                </ul>
+              </article>
+
+              <article class="experience-item">
+                <h3>Research Assistant</h3>
+                <div class="experience-meta">Research Experience</div>
+                <ul>
+                  <li>Conducted literature reviews to understand research questions and existing scientific findings.</li>
+                  <li>Supported research planning and experimental work in line with project objectives.</li>
+                  <li>Collected, organised and analysed experimental data to support interpretation of results.</li>
+                  <li>Documented methods and findings, with attention to data accuracy, consistency and scientific reporting.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="projects">
-      <div class="section-heading">
-        <h2>Featured projects</h2>
-        <p class="section-note">Selected academic and portfolio work demonstrating data preparation, analysis and modelling.</p>
-      </div>
-      <div class="grid">
-        <article class="card project">
-          <div class="project-meta">CUSTOMER ANALYTICS</div>
-          <h3>E-commerce Customer Segmentation</h3>
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Selected Work</div>
+          <h2>Projects</h2>
           <p>
-            Analysed an e-commerce transaction dataset reported to contain around one million records.
-            Used purchasing behaviour and RFM (Recency, Frequency and Monetary value) analysis to explore
-            customer groups and possible retention or marketing actions.
+            Selected projects covering data analytics, customer segmentation,
+            business intelligence and applied machine learning.
           </p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Visualisation</span></div>
-          <div class="project-links"><a href="https://github.com/Brinthat" target="_blank" rel="noopener noreferrer">Find project on GitHub ↗</a></div>
-        </article>
-
-        <article class="card project">
-          <div class="project-meta">DATA ANALYSIS &amp; MODELLING</div>
-          <h3>Global Health Indicators Analysis</h3>
-          <p>
-            Explored relationships between development indicators and infant mortality across more than
-            130 countries. Prepared data, investigated patterns and evaluated regression modelling approaches.
-            The recorded model result improved from R² = 0.577 to R² = 0.646.
-          </p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Regression</span><span class="tag">Visualisation</span></div>
-          <div class="project-links"><a href="https://github.com/Brinthat" target="_blank" rel="noopener noreferrer">Find project on GitHub ↗</a></div>
-        </article>
-
-        <article class="card project">
-          <div class="project-meta">BUSINESS INTELLIGENCE</div>
-          <h3>AI Company Impact Dashboard</h3>
-          <p>
-            Portfolio dashboard concept exploring an AI ecosystem dataset covering 11 companies and more
-            than 3,000 foundation models, with comparative views and interactive summaries.
-          </p>
-          <div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX concepts</span></div>
-          <div class="project-links"><a href="https://github.com/Brinthat" target="_blank" rel="noopener noreferrer">Find project on GitHub ↗</a></div>
-        </article>
-
-        <article class="card project">
-          <div class="project-meta">APPLIED AI</div>
-          <h3>Breast Ultrasound Report Generation</h3>
-          <p>
-            MSc dissertation combining a CNN and Transformer architecture to generate descriptions from
-            breast ultrasound images, with explainability techniques including Grad-CAM and attention heatmaps.
-          </p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Deep learning</span><span class="tag">CNN</span><span class="tag">Transformers</span><span class="tag">XAI</span></div>
-        </article>
-      </div>
-      <p class="section-note" style="margin-top:12px;">
-        GitHub links currently point to my profile. Replace them with each project's direct repository URL when available.
-      </p>
-    </section>
-
-    <section id="experience">
-      <div class="section-heading">
-        <h2>Professional experience</h2>
-        <p class="section-note">Data, software development and analytical problem-solving experience.</p>
-      </div>
-
-      <article class="card experience-item">
-        <div class="experience-title">
-          <div>
-            <h3>Big Data Analyst Intern · Tech Guild</h3>
-            <p>Data preparation, analysis and reporting exposure</p>
-          </div>
-          <div class="date">Oct 2024 – May 2025</div>
         </div>
-        <ul>
-          <li>Developed experience and understanding of data profiling, cleaning, validation and preparation for analysis.</li>
-          <li>Built knowledge of Python, SQL, business intelligence reporting and data transformation workflows.</li>
-          <li>Gained exposure to big-data and cloud analytics concepts, including PySpark, Hadoop and AWS.</li>
-          <li>Explored how analytical findings and KPIs can be communicated through dashboards and visualisations.</li>
-        </ul>
-      </article>
 
-      <article class="card experience-item">
-        <div class="experience-title">
-          <div>
-            <h3>Software Developer Level 2 · Securden Technologies</h3>
-            <p>Enterprise cybersecurity product development</p>
-          </div>
-          <div class="date">Aug 2022 – Aug 2023</div>
-        </div>
-        <ul>
-          <li>Worked on enterprise security applications using Python, Django, JavaScript and relational databases.</li>
-          <li>Worked with MySQL and PostgreSQL and collaborated through Git in an Agile/Scrum environment.</li>
-          <li>Applied software development practices to debugging, testing, maintainability and collaborative delivery.</li>
-        </ul>
-      </article>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-number">PROJECT 01</div>
+            <h3>Breast Ultrasound Report Generation Using CNN–Transformer</h3>
+            <p>
+              MSc dissertation exploring an integrated CNN–Transformer approach
+              for generating breast ultrasound reports. Incorporated explainable
+              AI techniques, including Grad-CAM and attention heatmaps, to help
+              interpret model behaviour.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">CNN</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">XAI</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Brinthat/bReAsT_cancer_Report_Generation"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub Repository ↗
+            </a>
+          </article>
 
-      <article class="card experience-item">
-        <div class="experience-title">
-          <div>
-            <h3>Research and Academic Project Experience</h3>
-            <p>Biotechnology, data analysis and scientific investigation</p>
-          </div>
+          <article class="project-card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>Infant Mortality Analysis</h3>
+            <p>
+              Analysed global health indicators across more than 130 countries
+              to explore relationships with infant mortality. Applied regression
+              modelling and evaluated model performance to investigate how
+              selected indicators relate to outcomes.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Data Visualisation</span>
+              <span class="tag">PySpark</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Brinthat/Infant_Mortality_Analysis"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub Repository ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Customer Segmentation Using RFM & Clustering</h3>
+            <p>
+              Analysed transaction data using Recency, Frequency and Monetary
+              value (RFM) features alongside clustering techniques to explore
+              customer groups and potential opportunities for targeted marketing
+              and retention strategies.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">RFM Analysis</span>
+              <span class="tag">Clustering</span>
+              <span class="tag">Scikit-learn</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Brinthat/Customer_Segmentation_RFM_Clustering"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub Repository ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 04</div>
+            <h3>AI Company Impact — Power BI Dashboard</h3>
+            <p>
+              Developed a business intelligence project exploring information
+              about AI companies and foundation models. Focused on presenting
+              data through dashboard-style visualisations to make comparisons
+              and patterns easier to explore.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">Data Visualisation</span>
+              <span class="tag">Power Query</span>
+              <span class="tag">DAX Concepts</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Brinthat/AI-Company-Impact-PowerBI-Dashboard"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub Repository ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 05</div>
+            <h3>AI Ticket Triage</h3>
+            <p>
+              An AI-assisted ticket triage project focused on organising support
+              requests and helping route tickets to appropriate categories or
+              workflows. Refer to the repository for implementation details
+              and the technologies used.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Applied AI</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Ticket Classification</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/Brinthat/AI-Ticket-Triage"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub Repository ↗
+            </a>
+          </article>
         </div>
-        <p>
-          Previous biotechnology education and research experience developed my skills in reviewing evidence,
-          collecting and interpreting data, documenting methods and communicating findings. These skills complement
-          my technical training in analytics and AI.
-        </p>
-      </article>
+      </div>
     </section>
 
     <section id="education">
-      <div class="section-heading"><h2>Education</h2></div>
-      <div class="grid">
-        <article class="card">
-          <h3>MSc Artificial Intelligence &amp; Data Science</h3>
-          <p>University of East London · Distinction</p>
-        </article>
-        <article class="card">
-          <h3>MTech Biotechnology</h3>
-          <p>SRM Institute of Science and Technology</p>
-        </article>
-        <article class="card">
-          <h3>BTech Biotechnology</h3>
-          <p>SASTRA University</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-heading">
-        <h2>Contact &amp; opportunities</h2>
-        <p class="section-note">Open to suitable UK opportunities in data analytics, business intelligence and applied data science.</p>
-      </div>
-      <div class="card">
-        <div class="actions" style="margin-top:0">
-          <a class="btn" href="https://linkedin.com/in/brinthat" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="btn secondary" href="https://github.com/Brinthat" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn secondary" href="cv/Brintha_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Academic Background</div>
+          <h2>Education</h2>
+          <p>
+            Postgraduate education combining artificial intelligence,
+            data science and biotechnology.
+          </p>
         </div>
-        <p style="margin-top:14px;">Based in London, UK.</p>
-      </div>
-    </section>
 
-    <footer>
-      <span>© <span id="year">2026</span> Brintha Thirunavukkarasu</span>
-      <span> · Built as a single-page data analytics portfolio.</span>
-    </footer>
-  </div>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+        <div class="education-grid">
+          <article class="education-card">
+            <h3>MSc Artificial Intelligence & Data Science</h3>
+            <p>University of East London, United Kingdom</p>
+            <p>
